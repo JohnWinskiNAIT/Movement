@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class MovementController : MonoBehaviour
 {
     // Input variables
-    public InputAction moveAction, rotateAction;
+    public InputAction moveAction, rotateAction, fireAction;
 
     [SerializeField] Vector2 moveValue, rotateValue;
 
@@ -37,6 +37,11 @@ public class MovementController : MonoBehaviour
         {
             target.transform.position = hit.point;
         }
+
+        if (fireAction.WasPressedThisFrame())
+        {
+            BroadcastMessage("Fire");
+        }
     }
 
     void MovePlayer()
@@ -44,7 +49,7 @@ public class MovementController : MonoBehaviour
         // Get player input
         moveValue = moveAction.ReadValue<Vector2>();
         rotateValue = rotateAction.ReadValue<Vector2>();
-
+        
         // Rotate player
         transform.Rotate(Vector3.up, rotateValue.x * rotationSpeed * Time.deltaTime);
         //Rotate weapon
@@ -83,10 +88,12 @@ public class MovementController : MonoBehaviour
     {
         moveAction.Enable();
         rotateAction.Enable();
+        fireAction.Enable();
     }
     private void OnDisable()
     {
         moveAction.Disable();
         rotateAction.Disable();
+        fireAction.Disable();
     }
 }
