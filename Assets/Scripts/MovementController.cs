@@ -25,7 +25,7 @@ public class MovementController : MonoBehaviour
     {
         // Initialize movement variable;
         movementSpeed = 3.0f;
-        rotationSpeed = 500.0f;
+        rotationSpeed = 300.0f;
     }
 
     // Update is called once per frame
