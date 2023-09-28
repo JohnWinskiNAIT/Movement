@@ -6,6 +6,9 @@ public class Grenade : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        this.gameObject.SetActive(false);
+        if (collision.transform.tag == "Paintable")
+        {
+            collision.gameObject.GetComponent<Renderer>().material.color = gameObject.GetComponentInChildren<Renderer>().material.color;
+        }
     }
 }
