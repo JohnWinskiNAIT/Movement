@@ -27,7 +27,6 @@ public class Weapon : MonoBehaviour
         {
             instantiatedObject = Instantiate(projectile);
             instantiatedObject.SetActive(false);
-            instantiatedObject.transform.SetParent(transform);
             grenades[i] = instantiatedObject;
             Physics.IgnoreCollision(GetComponentInChildren<Collider>(), instantiatedObject.GetComponentInChildren<Collider>());
         }
