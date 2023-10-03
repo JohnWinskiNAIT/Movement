@@ -63,9 +63,9 @@ public class MovementController : MonoBehaviour
         {
             weapon.transform.localRotation = Quaternion.Euler(45.0f, 0, 0);
         }
-        if (angles.x < 315.0f && angles.x > 180.0f)
+        if (angles.x < 270.0f && angles.x > 180.0f)
         {
-            weapon.transform.localRotation = Quaternion.Euler(315.0f, 0, 0);
+            weapon.transform.localRotation = Quaternion.Euler(270.0f, 0, 0);
         }
 
         var keyboard = Keyboard.current;
