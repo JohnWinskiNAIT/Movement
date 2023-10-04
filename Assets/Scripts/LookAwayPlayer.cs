@@ -16,7 +16,7 @@ public class LookAwayPlayer : MonoBehaviour
     {
         if (player != null)
         {
-            transform.LookAt(player.transform.position);
+            transform.LookAt(transform.position + (transform.position - player.transform.forward));
         }
     }
 }
