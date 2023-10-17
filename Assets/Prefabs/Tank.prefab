@@ -622,6 +622,7 @@ MonoBehaviour:
   healthUI: {fileID: 5059799728363107711}
   healthValue: {fileID: 5059799729819076687}
   destructible: {fileID: 8529391453996971290, guid: fcadfccd8bbab514f9eb57062e72bebe, type: 3}
+  explosionParticle: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
 --- !u!1 &8820180350403132479
 GameObject:
   m_ObjectHideFlags: 0

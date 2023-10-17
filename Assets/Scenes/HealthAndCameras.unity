@@ -623,6 +623,7 @@ MonoBehaviour:
   healthUI: {fileID: 259423502}
   healthValue: {fileID: 1455341630}
   destructible: {fileID: 0}
+  explosionParticle: {fileID: 0}
 --- !u!4 &262519825
 Transform:
   m_ObjectHideFlags: 0

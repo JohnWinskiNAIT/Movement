@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     [SerializeField] Image healthUI;
     [SerializeField] TMP_Text healthValue;
     [SerializeField] GameObject destructible;
+    [SerializeField] GameObject explosionParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,10 @@ public class Health : MonoBehaviour
         if (destructible != null)
         {
             Instantiate(destructible, transform.position, transform.rotation);
+        }
+        if (explosionParticle != null)
+        {
+            Instantiate(explosionParticle, transform.position, transform.rotation);
         }
     }
 }
