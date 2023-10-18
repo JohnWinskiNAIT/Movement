@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
@@ -13,6 +14,8 @@ public class PauseMenu : MonoBehaviour
     public InputAction pauseAction;
 
     [SerializeField] MonoBehaviour[] scriptsToPause;
+
+    [SerializeField] AudioMixer audioMixer;
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +32,10 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void MasterVolumeUpdate(float volume)
+    {
+        audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
+    }
     public void Resume()
     {
         isPaused = !isPaused;
