@@ -20,12 +20,18 @@ public class MovementController : MonoBehaviour
     // Clamping variables
     Vector3 angles;
 
+    // Get the audiosource
+    AudioSource mySource;
+
+
     // Start is called before the first frame update
     void Start()
     {
         // Initialize movement variable;
         movementSpeed = 3.0f;
         rotationSpeed = 500.0f;
+
+        mySource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -75,6 +81,18 @@ public class MovementController : MonoBehaviour
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 10.0f, ForceMode.VelocityChange);
             }
+        }
+
+        if (moveValue.magnitude > 0)
+        {
+            if (!mySource.isPlaying)
+            {
+                mySource.Play();
+            }
+        }
+        else
+        {
+            mySource.Stop();
         }
     }
 
