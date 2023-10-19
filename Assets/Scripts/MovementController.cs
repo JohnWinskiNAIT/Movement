@@ -23,6 +23,9 @@ public class MovementController : MonoBehaviour
     // Get the audiosource
     AudioSource mySource;
 
+    // Get the animator for the player
+    [SerializeField] Animator myAnimator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -88,11 +91,13 @@ public class MovementController : MonoBehaviour
             if (!mySource.isPlaying)
             {
                 mySource.Play();
+                myAnimator.SetBool("Walking", true);
             }
         }
         else
         {
             mySource.Stop();
+            myAnimator.SetBool("Walking", false);
         }
     }
 

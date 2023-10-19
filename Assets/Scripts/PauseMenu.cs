@@ -36,6 +36,11 @@ public class PauseMenu : MonoBehaviour
     {
         audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
     }
+
+    public void SFXVolumeUpdate(float volume)
+    {
+        audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+    }
     public void Resume()
     {
         isPaused = !isPaused;
